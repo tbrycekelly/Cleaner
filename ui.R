@@ -11,11 +11,12 @@ ui = fluidPage(
       sliderInput("xrange", label = "X Range", min = 0, max = 0, value = c(0,0)),
       sliderInput("yrange", label = "Y Range", min = 0, max = 0, value = c(0,0)),
       selectInput("pal", label = "Palette", choices =c("inferno", 'ocean.deep', 'ocean.thermal', 'ocean.curl', 'ocean.amp', 'alphabet')),
-      downloadButton("download")
+      downloadButton("download"),
+      actionButton('refresh', 'Refresh')
     ),
     
     mainPanel(
-      plotOutput("dataPlot", click = "pointPicker")
+      plotOutput("dataPlot", click = "pointPicker", height = '800px')
     )
   )
 )
